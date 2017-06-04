@@ -71,3 +71,16 @@ extension AppleMapsViewController: MKMapViewDelegate {
     }
     
 }
+
+extension AppleMapsViewController: LocationUpdatable {
+    
+    func locationDidChange(_ location: CLLocation) {
+    
+    }
+    
+    func centerAroundLocation(_ location: CLLocation) {
+        let region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.03, 0.03))
+        mapView.setRegion(region, animated: false)
+    }
+    
+}

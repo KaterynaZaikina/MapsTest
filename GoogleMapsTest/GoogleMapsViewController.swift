@@ -25,7 +25,6 @@ class GoogleMapsViewController: UIViewController {
     
     private func setupMapView() {
         mapView = GMSMapView(frame: view.frame)
-        mapView.isHidden = false
         
         mapView.delegate = self
         view.addSubview(mapView)
@@ -63,4 +62,17 @@ extension GoogleMapsViewController: GMSMapViewDelegate {
         return view
     }
 
+}
+
+extension GoogleMapsViewController: LocationUpdatable {
+    
+    func locationDidChange(_ location: CLLocation) {
+        
+    }
+    
+    func centerAroundLocation(_ location: CLLocation) {
+        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 14)
+        mapView.camera = position
+    }
+    
 }

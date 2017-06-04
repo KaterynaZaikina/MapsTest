@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80923D381EE40307008D6461 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80923D371EE40307008D6461 /* LocationManager.swift */; };
+		80923D3A1EE411C7008D6461 /* LocationUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80923D391EE411C7008D6461 /* LocationUpdatable.swift */; };
 		80FF2A111ED714AE00EEECA9 /* GoogleMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A101ED714AE00EEECA9 /* GoogleMapsTests.swift */; };
 		80FF2A1C1ED714AE00EEECA9 /* GoogleMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A1B1ED714AE00EEECA9 /* GoogleMapsUITests.swift */; };
 		80FF2A491ED7221500EEECA9 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A451ED7221500EEECA9 /* GoogleMapsViewController.swift */; };
@@ -42,6 +43,7 @@
 		362ED2BBA9146783675E9C9F /* Pods_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9DE37625C53EC610FAF593 /* Pods_GoogleMapsTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80923D371EE40307008D6461 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = GoogleMapsTest/LocationManager.swift; sourceTree = SOURCE_ROOT; };
+		80923D391EE411C7008D6461 /* LocationUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationUpdatable.swift; path = GoogleMapsTest/LocationUpdatable.swift; sourceTree = SOURCE_ROOT; };
 		80FF29F81ED714AE00EEECA9 /* GoogleMapsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF2A0C1ED714AE00EEECA9 /* GoogleMapsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF2A101ED714AE00EEECA9 /* GoogleMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTests.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				80FF2A5A1ED8673700EEECA9 /* ChooseMapsViewController.swift */,
+				80923D391EE411C7008D6461 /* LocationUpdatable.swift */,
 				80FF2A451ED7221500EEECA9 /* GoogleMapsViewController.swift */,
 				80FF2A581ED8670C00EEECA9 /* AppleMapsViewController.swift */,
 				80FF2A461ED7221500EEECA9 /* AppDelegate.swift */,
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80FF2A4A1ED7221500EEECA9 /* AppDelegate.swift in Sources */,
+				80923D3A1EE411C7008D6461 /* LocationUpdatable.swift in Sources */,
 				80FF2A491ED7221500EEECA9 /* GoogleMapsViewController.swift in Sources */,
 				80923D381EE40307008D6461 /* LocationManager.swift in Sources */,
 				80FF2A5B1ED8673800EEECA9 /* ChooseMapsViewController.swift in Sources */,

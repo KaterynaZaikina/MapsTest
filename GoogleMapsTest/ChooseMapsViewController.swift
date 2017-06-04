@@ -111,13 +111,18 @@ class ChooseMapsViewController: UIViewController {
     
     @IBAction private func changeMaps(_ sender: UISegmentedControl) {
         currentMapType = MapType(rawValue: sender.selectedSegmentIndex)!
+        locationManager.updateCurrentLocation()
     }
     
 }
 
 extension ChooseMapsViewController: LocationManagerDelegate {
     
-    func locationManager(_ manager: LocationManager, didGetCurrentLocation location: CLLocation) {}
+    func locationManager(_ manager: LocationManager, didGetCurrentLocation location: CLLocation) {
+        if let controller = currentController as? LocationUpdatable {
+            controller.centerAroundLocation(location)
+        }
+    }
     
     func locationManager(_ manager: LocationManager, didGetLocationWarningAlert alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
