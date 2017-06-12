@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		808726051EE6F007009A924E /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808726041EE6F007009A924E /* InfoView.xib */; };
+		808726071EE6F018009A924E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808726061EE6F018009A924E /* InfoView.swift */; };
+		808726141EE82A7A009A924E /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808726131EE82A7A009A924E /* MapAnnotationView.swift */; };
 		80923D381EE40307008D6461 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80923D371EE40307008D6461 /* LocationManager.swift */; };
 		80923D3A1EE411C7008D6461 /* LocationUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80923D391EE411C7008D6461 /* LocationUpdatable.swift */; };
+		80923D3C1EE42B78008D6461 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80923D3B1EE42B77008D6461 /* DataProvider.swift */; };
+		80EF2DAF1EE44BE100EE80AB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 80EF2DAE1EE44BE000EE80AB /* data.json */; };
+		80FEFA9F1EE46196009DAD03 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FEFA9E1EE46196009DAD03 /* MapAnnotation.swift */; };
 		80FF2A111ED714AE00EEECA9 /* GoogleMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A101ED714AE00EEECA9 /* GoogleMapsTests.swift */; };
 		80FF2A1C1ED714AE00EEECA9 /* GoogleMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A1B1ED714AE00EEECA9 /* GoogleMapsUITests.swift */; };
 		80FF2A491ED7221500EEECA9 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF2A451ED7221500EEECA9 /* GoogleMapsViewController.swift */; };
@@ -42,8 +48,14 @@
 		2110CEBB4822DFFB912AC30B /* Pods-GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMaps/Pods-GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		362ED2BBA9146783675E9C9F /* Pods_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9DE37625C53EC610FAF593 /* Pods_GoogleMapsTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808726041EE6F007009A924E /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoView.xib; path = GoogleMapsTest/InfoView.xib; sourceTree = SOURCE_ROOT; };
+		808726061EE6F018009A924E /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoView.swift; path = GoogleMapsTest/InfoView.swift; sourceTree = SOURCE_ROOT; };
+		808726131EE82A7A009A924E /* MapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotationView.swift; path = GoogleMapsTest/MapAnnotationView.swift; sourceTree = SOURCE_ROOT; };
 		80923D371EE40307008D6461 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = GoogleMapsTest/LocationManager.swift; sourceTree = SOURCE_ROOT; };
 		80923D391EE411C7008D6461 /* LocationUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationUpdatable.swift; path = GoogleMapsTest/LocationUpdatable.swift; sourceTree = SOURCE_ROOT; };
+		80923D3B1EE42B77008D6461 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = GoogleMapsTest/DataProvider.swift; sourceTree = SOURCE_ROOT; };
+		80EF2DAE1EE44BE000EE80AB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = GoogleMapsTest/data.json; sourceTree = SOURCE_ROOT; };
+		80FEFA9E1EE46196009DAD03 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = GoogleMapsTest/MapAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		80FF29F81ED714AE00EEECA9 /* GoogleMapsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF2A0C1ED714AE00EEECA9 /* GoogleMapsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF2A101ED714AE00EEECA9 /* GoogleMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTests.swift; sourceTree = "<group>"; };
@@ -155,10 +167,16 @@
 				80FF2A451ED7221500EEECA9 /* GoogleMapsViewController.swift */,
 				80FF2A581ED8670C00EEECA9 /* AppleMapsViewController.swift */,
 				80FF2A461ED7221500EEECA9 /* AppDelegate.swift */,
+				80923D3B1EE42B77008D6461 /* DataProvider.swift */,
+				80FEFA9E1EE46196009DAD03 /* MapAnnotation.swift */,
+				808726131EE82A7A009A924E /* MapAnnotationView.swift */,
 				80FF2A471ED7221500EEECA9 /* Info.plist */,
+				80EF2DAE1EE44BE000EE80AB /* data.json */,
 				80FF2A481ED7221500EEECA9 /* Assets.xcassets */,
 				80FF2A4D1ED724A000EEECA9 /* Base.lproj */,
 				80923D371EE40307008D6461 /* LocationManager.swift */,
+				808726041EE6F007009A924E /* InfoView.xib */,
+				808726061EE6F018009A924E /* InfoView.swift */,
 			);
 			name = GoogleMapsTest;
 			path = GoogleMaps;
@@ -324,7 +342,9 @@
 			files = (
 				80FF2A521ED724A100EEECA9 /* LaunchScreen.storyboard in Resources */,
 				80FF2A4C1ED7221500EEECA9 /* Assets.xcassets in Resources */,
+				808726051EE6F007009A924E /* InfoView.xib in Resources */,
 				80FF2A531ED724A100EEECA9 /* Main.storyboard in Resources */,
+				80EF2DAF1EE44BE100EE80AB /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,12 +417,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808726141EE82A7A009A924E /* MapAnnotationView.swift in Sources */,
 				80FF2A4A1ED7221500EEECA9 /* AppDelegate.swift in Sources */,
 				80923D3A1EE411C7008D6461 /* LocationUpdatable.swift in Sources */,
 				80FF2A491ED7221500EEECA9 /* GoogleMapsViewController.swift in Sources */,
+				80923D3C1EE42B78008D6461 /* DataProvider.swift in Sources */,
 				80923D381EE40307008D6461 /* LocationManager.swift in Sources */,
 				80FF2A5B1ED8673800EEECA9 /* ChooseMapsViewController.swift in Sources */,
 				80FF2A591ED8670C00EEECA9 /* AppleMapsViewController.swift in Sources */,
+				808726071EE6F018009A924E /* InfoView.swift in Sources */,
+				80FEFA9F1EE46196009DAD03 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

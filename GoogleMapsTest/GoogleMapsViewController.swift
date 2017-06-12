@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import SnapKit
+import MapKit
 
 class GoogleMapsViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class GoogleMapsViewController: UIViewController {
         }
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        centerAroundLocation(CLLocation(latitude: -33.865143, longitude: 151.209900))
     }
     
 }
@@ -45,21 +47,25 @@ extension GoogleMapsViewController: GMSMapViewDelegate {
     
     }
     
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        view.layer.cornerRadius = 10
-        view.backgroundColor = .green
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
         
-        return view
+        return true
     }
     
-    
-    func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 80))
-        view.layer.cornerRadius = 10
-        view.backgroundColor = .green
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        let infoView = InfoView.loadFromNib()
+        infoView.text = marker.title
         
-        return view
+        marker.tracksInfoWindowChanges = true
+        infoView.alpha = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            infoView.alpha = 1
+        }, completion: { _ in
+             marker.tracksInfoWindowChanges = false
+        })
+        
+        return infoView
     }
 
 }
@@ -73,6 +79,19 @@ extension GoogleMapsViewController: LocationUpdatable {
     func centerAroundLocation(_ location: CLLocation) {
         let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 14)
         mapView.camera = position
+    }
+    
+    func addAnnotations(_ annotations: [MKAnnotation]) {
+        mapView.clear()
+        annotations.forEach {
+            let marker = GMSMarker(position: $0.coordinate)
+            let imageView = UIImageView(image: UIImage(named: "iconMap"))
+            imageView.frame.size = CGSize(width: 40, height: 40)
+            marker.iconView = imageView
+            marker.title = $0.title!
+            marker.map = mapView
+            marker.appearAnimation = .pop
+        }
     }
     
 }

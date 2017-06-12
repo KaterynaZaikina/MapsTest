@@ -33,6 +33,7 @@ class ChooseMapsViewController: UIViewController {
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     private var locationManager = LocationManager.shared
+    fileprivate var dataProvider: DataProvider!
     
     private var currentMapType: MapType! {
         didSet {
@@ -120,7 +121,8 @@ extension ChooseMapsViewController: LocationManagerDelegate {
     
     func locationManager(_ manager: LocationManager, didGetCurrentLocation location: CLLocation) {
         if let controller = currentController as? LocationUpdatable {
-            controller.centerAroundLocation(location)
+            dataProvider = DataProvider()
+            controller.addAnnotations(dataProvider.mapPoints)
         }
     }
     

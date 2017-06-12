@@ -21,6 +21,7 @@ class AppleMapsViewController: UIViewController {
     private func setupMapView() {
         mapView.showsUserLocation = true
         mapView.delegate = self
+        centerAroundLocation(CLLocation(latitude: -33.865143, longitude: 151.209900))
     }
     
     fileprivate func setPin(at location: CLLocation) {
@@ -46,41 +47,35 @@ class AppleMapsViewController: UIViewController {
 extension AppleMapsViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MapPoint else { return nil }
+        
         let identifier = "pin"
-        var view: MKPinAnnotationView
-        guard let annotation = annotation as? MKPointAnnotation else { return nil }
+        var annotationView: MapAnnotationView
         
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MapAnnotationView {
             dequeuedView.annotation = annotation
-            view = dequeuedView
+            annotationView = dequeuedView
         } else {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView = MapAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         }
-        view.canShowCallout = true
-        let detailCalloutAccessoryView = UIView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = annotation.subtitle
-        detailCalloutAccessoryView.addSubview(label)
-        view.detailCalloutAccessoryView = detailCalloutAccessoryView
-        
-        
-        return view
+                
+        return annotationView
     }
     
 }
 
 extension AppleMapsViewController: LocationUpdatable {
     
-    func locationDidChange(_ location: CLLocation) {
-    
-    }
+    func locationDidChange(_ location: CLLocation) {}
     
     func centerAroundLocation(_ location: CLLocation) {
         let region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.03, 0.03))
         mapView.setRegion(region, animated: false)
+    }
+    
+    func addAnnotations(_ annotations: [MKAnnotation]) {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotations(annotations)
     }
     
 }

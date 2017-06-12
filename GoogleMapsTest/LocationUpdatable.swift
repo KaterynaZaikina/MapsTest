@@ -8,10 +8,12 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 protocol LocationUpdatable {
     
     func locationDidChange(_ location: CLLocation)
     func centerAroundLocation(_ location: CLLocation)
+    func addAnnotations(_ annotations: [MKAnnotation])
     
 }
